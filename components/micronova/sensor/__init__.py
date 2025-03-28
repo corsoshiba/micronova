@@ -43,7 +43,7 @@ CONFIG_SCHEMA = cv.Schema(
             accuracy_decimals=1,
         ).extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x00, default_memory_address=0x01
+                default_memory_location=0x00, default_memory_address=0x02
             )
         ),
         cv.Optional(CONF_FUMES_TEMPERATURE): sensor.sensor_schema(
