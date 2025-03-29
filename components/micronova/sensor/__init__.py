@@ -30,6 +30,7 @@ CONF_FAN_SPEED = "fan_speed"
 CONF_WATER_TEMPERATURE = "water_temperature"
 CONF_WATER_PRESSURE = "water_pressure"
 CONF_MEMORY_ADDRESS_SENSOR = "memory_address_sensor"
+CONF_MEMORY_ADDRESS7_SENSOR = "memory_address_sensor"
 CONF_FAN_RPM_OFFSET = "fan_rpm_offset"
 
 CONFIG_SCHEMA = cv.Schema(
@@ -43,7 +44,7 @@ CONFIG_SCHEMA = cv.Schema(
             accuracy_decimals=1,
         ).extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x20, default_memory_address=0x02
+                default_memory_location=0x20, default_memory_address=0x01
             )
         ),
         cv.Optional(CONF_FUMES_TEMPERATURE): sensor.sensor_schema(
@@ -102,6 +103,13 @@ CONFIG_SCHEMA = cv.Schema(
             )
         ),
         cv.Optional(CONF_MEMORY_ADDRESS_SENSOR): sensor.sensor_schema(
+            MicroNovaSensor,
+        ).extend(
+            MICRONOVA_LISTENER_SCHEMA(
+                default_memory_location=0x20, default_memory_address=0x73
+            )
+        ),
+        cv.Optional(CONF_MEMORY_ADDRESS7_SENSOR): sensor.sensor_schema(
             MicroNovaSensor,
         ).extend(
             MICRONOVA_LISTENER_SCHEMA(
