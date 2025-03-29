@@ -43,7 +43,7 @@ CONFIG_SCHEMA = cv.Schema(
             accuracy_decimals=1,
         ).extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x00, default_memory_address=0x02
+                default_memory_location=0x20, default_memory_address=0x02
             )
         ),
         cv.Optional(CONF_FUMES_TEMPERATURE): sensor.sensor_schema(
@@ -54,7 +54,7 @@ CONFIG_SCHEMA = cv.Schema(
             accuracy_decimals=1,
         ).extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x00, default_memory_address=0x5A
+                default_memory_location=0x20, default_memory_address=0x03
             )
         ),
         cv.Optional(CONF_STOVE_POWER): sensor.sensor_schema(
@@ -63,7 +63,7 @@ CONFIG_SCHEMA = cv.Schema(
             accuracy_decimals=0,
         ).extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x00, default_memory_address=0x34
+                default_memory_location=0x20, default_memory_address=0x08
             )
         ),
         cv.Optional(CONF_FAN_SPEED): sensor.sensor_schema(
@@ -73,7 +73,7 @@ CONFIG_SCHEMA = cv.Schema(
         )
         .extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x00, default_memory_address=0x37
+                default_memory_location=0x20, default_memory_address=0x23
             )
         )
         .extend(
@@ -87,7 +87,7 @@ CONFIG_SCHEMA = cv.Schema(
             accuracy_decimals=1,
         ).extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x00, default_memory_address=0x3B
+                default_memory_location=0x20, default_memory_address=0x37
             )
         ),
         cv.Optional(CONF_WATER_PRESSURE): sensor.sensor_schema(
@@ -98,14 +98,14 @@ CONFIG_SCHEMA = cv.Schema(
             accuracy_decimals=1,
         ).extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x00, default_memory_address=0x3C
+                default_memory_location=0x20, default_memory_address=0x65
             )
         ),
         cv.Optional(CONF_MEMORY_ADDRESS_SENSOR): sensor.sensor_schema(
             MicroNovaSensor,
         ).extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x00, default_memory_address=0x00
+                default_memory_location=0x20, default_memory_address=0x73
             )
         ),
     }
